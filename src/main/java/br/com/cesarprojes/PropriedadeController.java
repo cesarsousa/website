@@ -1,4 +1,4 @@
-package com.example.controller;
+package br.com.cesarprojes;
 
 import java.util.List;
 
@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.model.Propriedade;
-import com.example.repository.PropriedadeRepository;
-
 @RestController
 @RequestMapping("/api")
 public class PropriedadeController {
@@ -19,7 +16,7 @@ public class PropriedadeController {
 	private PropriedadeRepository repository;
 	
 	@RequestMapping(value="/find/{filtro}", method=RequestMethod.GET)
-	public List<Propriedade> findByFiltro (@PathVariable("filtro") String filtro){
+	List<Propriedade> findByFiltro (@PathVariable("filtro") String filtro){
 		return repository.findByFiltro(filtro);
 	}
 

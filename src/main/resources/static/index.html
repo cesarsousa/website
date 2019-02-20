@@ -21,7 +21,7 @@
   <script type="text/javascript">
 $(document).ready(function(){
 		
-function  (filter) {
+function propertiesService(filter) {
 		$.ajax({
 			type : "GET",
 			url : "/api/find/"+filter,
@@ -56,7 +56,7 @@ function  (filter) {
 	var minlength = 2;
 			
 	$("#search").keypress(function(e) {
-		    if(e.which == 13) {
+		if(e.which == 13) {
 		        value = $(this).val();
 		        if (value.length >= minlength ) {
 	             propertiesService(value);
